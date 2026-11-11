@@ -8054,7 +8054,7 @@
                     >
                       {{
                         t("admin.settings.payment.balanceRechargePreview", {
-                          usd: formatBalanceRechargeMultiplier(
+                          usd: (
                             Number(form.payment_balance_recharge_multiplier) ||
                             1
                           ).toFixed(8),
@@ -9016,7 +9016,6 @@ import AdminAccessKeysSettings from "@/components/admin/settings/AdminAccessKeys
 import TotpStepUpDialog from "@/components/auth/TotpStepUpDialog.vue";
 import { affiliatesAPI, type AffiliateAdminEntry, type SimpleUser as AffiliateSimpleUser } from "@/api/admin/affiliates";
 import { extractApiErrorMessage, extractI18nErrorMessage } from "@/utils/apiError";
-import { formatBalanceRechargeMultiplier } from "@/utils/rechargeBonus";
 import { useAppStore } from "@/stores";
 import { useAdminSettingsStore } from "@/stores/adminSettings";
 import { normalizeVisibleMethod } from "@/components/payment/paymentFlow";
