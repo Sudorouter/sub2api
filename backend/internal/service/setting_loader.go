@@ -4,6 +4,7 @@ package service
 
 import (
 	"context"
+	"encoding/json"
 	"log/slog"
 	"sync/atomic"
 	"time"
@@ -12,7 +13,16 @@ import (
 )
 
 func NewSettingLoader[T any](key string, parser func(string) (T, error)) *SettingLoader[T] {
+	if parser == nil {
+		parser = JsonParser
+	}
 	return &SettingLoader[T]{key: key, parser: parser}
+}
+
+func JsonParser[T any](raw string) (T, error) {
+	var value T
+	err := json.Unmarshal([]byte(raw), &value)
+	return value, err
 }
 
 type SettingLoader[T any] struct {
