@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
     inputs:
       image_tag:
-        description: 'Image tag to push instead of latest; leave empty to use latest'
+        description: 'Primary image tag to push; leave blank to use latest'
         required: false
         type: string
       deploy_host:
-        description: 'Azure VM IP to deploy to; Use "default" for DEPLOY_HOST variable, leave empty to skip deployment'
+        description: 'Azure VM IP to deploy to; enter "default" to use DEPLOY_HOST, or leave blank to skip deployment'
         required: false
         type: string
 
