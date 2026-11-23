@@ -397,7 +397,7 @@ func registerAccountRoutes(admin *gin.RouterGroup, h *handler.Handlers, stepUpAu
 		accounts.DELETE("/:id", h.Admin.Account.Delete)
 		accounts.POST("/:id/test", h.Admin.Account.Test)
 		// sudoapi: Account responses test.
-		accounts.POST("/:id/test/v1/messages", h.OpenAIGateway.AdminTestResponses)
+		accounts.POST("/:id/test/v1/responses", h.OpenAIGateway.AdminTestResponses)
 		accounts.POST("/:id/recover-state", h.Admin.Account.RecoverState)
 		accounts.POST("/:id/refresh", h.Admin.Account.Refresh)
 		accounts.POST("/:id/apply-oauth-credentials", h.Admin.Account.ApplyOAuthCredentials)
